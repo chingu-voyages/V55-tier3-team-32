@@ -12,7 +12,7 @@ you like the best.
 
 | Project Idea | Description | teammate name | teammate name | teammate name | teammate name | teammate name | teammate name |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| First idea | Description | | | | | | |
+| Resources Application  | for Developers or IT Professionals who need fin tehcnical informations (Articlets, Software Code, Manufacturing Process, Desingers, Operational procedures) help teams to work better and faster with IA prompts from Google Gemini Search and Recommending quality and double verify information to trusted technical content. | Alberto | Farmata | Greg | Maryam | Bruna | |
 | Second idea | Description | | | | | | |
 | ... | Description | | | | | | |
 | Last idea | Description | | | | | | |
