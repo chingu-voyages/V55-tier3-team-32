@@ -1,0 +1,22 @@
+
+
+<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="16" fill="#282828"/>
+  <!-- Top Question Mark (without dot) -->
+  
+    <path
+    d="M12 11
+       Q 12 6, 16 6
+       Q 20 6, 20 11
+       Q 20 14, 16 14
+       Q 20 12, 16 11"
+    stroke="orange"
+    stroke-width="1.5"
+    fill="none"
+    stroke-linecap="round"
+  />
+  <!-- Center Q -->
+  <text x="16" y="21" text-anchor="middle" font-size="14" fill="orange" font-family="Arial" font-weight="bold">Q</text>
+  <!-- Bottom dot of Question Mark -->
+  <circle cx="16" cy="26" r="2" fill="orange"/>
+</svg>
