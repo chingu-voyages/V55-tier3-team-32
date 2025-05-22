@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "lib": ["DOM", "esnext"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "outDir": "build",
+    "rootDir": "./src",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es5",
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
