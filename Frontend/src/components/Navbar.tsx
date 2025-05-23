@@ -1,7 +1,7 @@
 export default function Navbar() {
     return (
        <>
-        
+    
           
           <div className="absolute left-0 right-0 top-0 h-[350px] pointer-events-none z-0"
             style={{
