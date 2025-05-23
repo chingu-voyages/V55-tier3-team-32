@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import CryptoIcons from "../components/CryptoIcons";
