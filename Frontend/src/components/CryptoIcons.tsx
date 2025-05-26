@@ -1,8 +1,8 @@
 const icons = [
-    '../public/btc.svg', 
-    '../public/sol.svg',
-    '../public/line.svg',
-    '../public/eth.svg',
+    './public/btc.svg', 
+    './public/sol.svg',
+    './public/line.svg',
+    './public/eth.svg',
   ];
   
   export default function CryptoIcons() {
@@ -14,4 +14,4 @@ const icons = [
       </div>
     );
   }
-  
+ 

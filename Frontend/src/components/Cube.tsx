@@ -1,8 +1,8 @@
     const icons = [
-    '../public/btcb.svg', 
-    '../public/solb.svg',
-    '../public/lineb.svg',
-    '../public/ethb.svg',
+    './public/btcb.svg', 
+    './public/solb.svg',
+    './public/lineb.svg',
+    './public/ethb.svg',
   ];
 export default function Cube() {
   return (
