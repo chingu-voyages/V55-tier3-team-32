@@ -1,3 +1,4 @@
+import logo from '/logo.svg';
 export default function Navbar() {
     return (
        <>
@@ -40,7 +41,7 @@ export default function Navbar() {
           </div>
         <nav className="flex justify-between items-center px-8 py-5 bg-black bg-opacity-200 rounded-xl mt-5 mx-auto max-w-7xl w-[70%] backdrop-blur-sm shadow-lg">
           <div className="flex items-center space-x-3 mr-20">
-            <img src="./public/logo.svg" alt="Cryptolink" className="h-8" />
+            <img src={logo} alt="Cryptolink" className="h-8" />
             <span className="text-orange-400 font-bold text-lg">Cryptolink</span>
           </div>
           <ul className="flex  space-x-6  text-white/80">
