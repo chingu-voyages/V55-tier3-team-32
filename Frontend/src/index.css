@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.cube-container {
+  perspective: 600px;
+  width: 200px;
+  height: 200px;
+  margin: 60px auto;
+}
+
+.cube {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 8s infinite linear;
+}
+.cube-face {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(135deg, #11100f 50%, #0f0e0b 100%);
+  /* background: #11100f; */
+  border: 2px solid #11100f;
+  border-radius: 3px;
+  box-shadow: 0 0 20px #ff9900ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+  opacity: 1;
+}
+
+/* Position each face */
+.cube-front  { transform: rotateY(0deg)    translateZ(80px); }
+.cube-back   { transform: rotateY(180deg)  translateZ(80px); }
+.cube-right  { transform: rotateY(90deg)   translateZ(80px); }
+.cube-left   { transform: rotateY(-90deg)  translateZ(80px); }
+.cube-top    { transform: rotateX(90deg)   translateZ(80px); }
+.cube-bottom { transform: rotateX(-90deg)  translateZ(80px); }
+
+/* Animation */
+@keyframes rotateCube {
+  from { transform: rotateX(0deg) rotateY(0deg); }
+  to   { transform: rotateX(360deg) rotateY(360deg); }
+}
