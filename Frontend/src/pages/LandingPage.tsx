@@ -1,8 +1,13 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import CryptoIcons from "../components/CryptoIcons";
+import Review from "../components/Review";
+import Cube from "../components/Cube";
+
+import Footer from "../components/Footer";
+import AboutUs from "../components/AboutUs";
 
 
 
@@ -17,9 +22,11 @@ const LandingPage: React.FC = () => {
      
       <Navbar />
       <HeroSection />
+      <Cube />
+      <Review />
       <CryptoIcons />
-      
-
+     <AboutUs />
+      <Footer />
     </div>
   );
 };

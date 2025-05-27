@@ -9,5 +9,13 @@ export default {
       'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
     },
   } },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide'),
+  ],
+  extend: {
+  animation: {
+    'spin-slow': 'spin 10s linear infinite',
+  }
+}
+
 }
