@@ -1,18 +1,6 @@
 import { Link } from 'react-router-dom';
 import logo from '/logo.svg';
-
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../hooks/useAuth";
 export default function Navbar() {
-   const { isLoggedIn } = useAuth();
-   const navigate = useNavigate();
-
-   const checkAuth = () => {
-    // Check if the user is logged in
-    if (!isLoggedIn) {
-      navigate("/?authRequired=true");
-    }
-  };
     return (
        <>
     
@@ -59,11 +47,7 @@ export default function Navbar() {
             <span className="text-orange-400 font-bold text-lg">Cryptolink</span>
           </div>
           </Link>
-          <ul className="flex  space-x-6  text-white/80">
           
-            <li className="py-2 ">About us</li>
-            <li><button onClick={checkAuth} className=" px-4 py-2 rounded bg-orange-400 text-black font-semibold hover:bg-orange-500 transition">Start Questions</button></li>
-          </ul>
 
 
         </nav>
