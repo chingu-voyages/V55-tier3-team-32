@@ -5,7 +5,7 @@ import AuthForm from "../components/AuthForm";
 
 
 export default function LoginPage() {
-  const { isLoggedIn, username, logout, login } = useAuth();
+  const { login } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
 
 
