@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function HeroSection() {
     return (
       <section className="flex flex-col items-center justify-center min-h-[60vh] text-center pt-20">
@@ -8,9 +10,11 @@ export default function HeroSection() {
           Maximize your potential with a powerful platform built to shape the future of your knowledge.
         </p>
         <div className="flex gap-4 justify-center mb-12">
+          <Link to="/signup">
           <button className="px-6 py-3 rounded bg-orange-400 text-black font-bold hover:bg-orange-500 transition">
             Sign Up
           </button>
+          </Link>
           <button className="px-6 py-3 rounded border border-white/40 text-white/90 hover:bg-white/10 transition">
             Live Demo
           </button>

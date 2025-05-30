@@ -1,6 +1,6 @@
 import React from "react";
 const contributors = [
-  { name: "Bruna", link: "12" },
+  { name: "Bruna Rodrigues", link: "https://github.com/bfrodrigues" },
   { name: "Farmata Kane", link: "https://github.com/miiswom?tab=overview&from=2024-12-01&to=2024-12-31" },
   { name: "Ngodi Albert", link: "https://github.com/ngodi" },
   { name: "Maryam Hazrati", link: "https://github.com/Maryamh12" },

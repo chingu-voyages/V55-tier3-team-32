@@ -47,3 +47,24 @@
   from { transform: rotateX(0deg) rotateY(0deg); }
   to   { transform: rotateX(360deg) rotateY(360deg); }
 }
+
+.input-glow:focus {
+  animation: glow-border 1.5s infinite;
+  outline: none;
+  border-color: #ff9900 !important;
+}
+
+.input-glow:focus {
+  animation: glow-border 1.5s infinite;
+  outline: none;
+  border-color: #ff9900 !important;
+}
+
+@keyframes glow-border {
+  0%, 100% {
+    box-shadow: 0 0 0 0 #ff990080, 0 0 8px 4px #ff9900;
+  }
+  50% {
+    box-shadow: 0 0 12px 2px #ff9900cc, 0 0 16px 8px #fffbe0cc;
+  }
+}
