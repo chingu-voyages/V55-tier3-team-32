@@ -31,7 +31,7 @@ export abstract class CustomError extends Error {
       statusCode: this.statusCode,
       status: this.status,
       comingFrom: this.comingFrom,
-    }
+    };
   }
 }
 
