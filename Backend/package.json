@@ -10,7 +10,7 @@
     "lint:fix": "eslint 'src/**/*.ts' --fix",
     "prettier:check": "prettier --check 'src/**/*.{ts,json}'",
     "prettier:fix": "prettier --write 'src/**/*.{ts,json}'",
-    "build": "tsc tsconfig.json",
+    "build": "tsc",
     "test": "jest"
   },
   "keywords": [],
