@@ -4,7 +4,9 @@ import { UserModel } from '../../models/user/UserModel';
 
 export const createUser = async (userData: IUserInterface) => {
   try {
+    console.log('Creating user with data:', userData);
     const user = await UserModel.create(userData);
+    console.log('User created successfully:', user);
     return user;
   } catch (error: unknown) {
     throw new BadRequestError(`Error creating user: ${error}`, 'createUser() method');

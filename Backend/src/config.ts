@@ -13,10 +13,10 @@ class Config {
   constructor() {
     this.SERVER_PORT = process.env.SERVER_PORT || '4001';
     this.SECRET_KEY_ONE = process.env.SECRET_KEY_ONE;
-    this.JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
+    this.JWT_SECRET_KEY = process.env.JWT_SECRET_KEY || 'your_jwt_secret_key';
     this.NODE_ENV = process.env.NODE_ENV || 'development';
-    this.CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:3000';
-    this.POSTGRES_URL = process.env.POSTGRES_URL || '';
+    this.CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
+    this.POSTGRES_URL = process.env.POSTGRES_URL || 'postgres://myuser:mypassword@localhost:5432/mydatabase';
   }
 }
 
