@@ -13,6 +13,8 @@ export type Props = {
   setIsLoading?: any
   submitStatus?: boolean
   setIsSubmitted?: any
+  validInput?: boolean
+  setIsValid?: any
 }
 
 
@@ -22,8 +24,8 @@ const SearchPage = () => {
   const [keyword, setKeyword] = useState<string>("");
   const [resourceMatches, setResourceMatches] = useState<[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
-
+  // const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
+  const [isValid, setIsValid] = useState<boolean>(true)
 
   return (
     <div className="w-full bg-[#1a1a17] flex flex-col min-h-screen overflow-hidden relative">
@@ -36,8 +38,10 @@ const SearchPage = () => {
       setKeyword={setKeyword} 
       setIsLoading={setIsLoading} 
       setResourceMatches={setResourceMatches}
-      submitStatus={isSubmitted}
-      setIsSubmitted={setIsSubmitted}
+      // submitStatus={isSubmitted}
+      // setIsSubmitted={setIsSubmitted}
+      validInput={isValid}
+      setIsValid={setIsValid}
       />
 
       {/* <SearchResults 

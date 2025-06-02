@@ -1,8 +1,9 @@
 import { type Props } from "../pages/SearchPage";
 
 const SearchInput = (props: Props) => {
-  const { keywordProp, setIsLoading, setKeyword, setResourceMatches, submitStatus, /*setIsSubmitted*/ } = props
+  const { keywordProp, setIsLoading, setKeyword, setResourceMatches, submitStatus, /*setIsSubmitted*/ validInput, setIsValid} = props
   // console.log(keywordProp)
+  console.log(validInput)
   function handleSearchSubmit(e: any) {
     e.preventDefault()
 
@@ -25,7 +26,18 @@ const SearchInput = (props: Props) => {
   }
 
   function handleInputVal(fn: any, val: string) {
+    validateInput(val)
     return fn(val)
+  }
+
+  function validateInput(input: string) {
+    if(+input > 0 || input.match(/[!"£$%^&*()-_+={}[ \]:;'@<>?\\\/]/)) {
+      console.log('this is not valid')
+      setIsValid(false)
+    } else {
+      console.log('this is valid')
+      setIsValid(true)
+    }
   }
 
   return (
@@ -57,7 +69,8 @@ const SearchInput = (props: Props) => {
           <option value="ai">AI</option>
         </select>
 
-        <button  className={`${keywordProp?.length === 0 ?`bg-orange-200`: `bg-orange-400`} font-bold w-32 mx-auto rounded-md mb-4 p-3 $ $`} disabled={submitStatus? false : true}>Search</button>
+        <button  className={`${keywordProp?.length === 0 || !validInput ?`bg-orange-200`: `bg-orange-400`} font-bold w-32 mx-auto rounded-md mb-4 p-3 $ $`} disabled={submitStatus ? false : true}>Search</button>
+        {validInput ? null :  <span className="text-center text-red-500">Enter letters only. For example: <span className="italic">javascript</span></span>}
       </div>
     </form>
   )
