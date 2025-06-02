@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer";
 import SearchInput from "../components/SearchInput";
-/*import SearchResults from "../components/SearchResults"*/
+import SearchResults from "../components/SearchResults"
 
 export type Props = {
   keywordProp?: string
@@ -44,10 +44,10 @@ const SearchPage = () => {
       setIsValid={setIsValid}
       />
 
-      {/* <SearchResults 
+      <SearchResults 
       resourcesProp={resourceMatches}
       loadingOn={isLoading}
-      /> */}
+      />
       <Footer />
     </div>
   )
