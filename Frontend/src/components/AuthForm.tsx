@@ -109,7 +109,7 @@ const AuthForm : React.FC<AuthFormProps> = ({isLogin, setIsLogin, login}) => {
             let token: string
             if(isLogin){
                 // Login logic
-                const response = await axios.post(`${API_URL}/users/login`, formDataLogin);
+                const response = await axios.post(`${API_URL}/api/v1/users/login`, formDataLogin);
                 token = response.data.token;
                 setIsLoading(false);
                 setFromDataLogin({
@@ -118,7 +118,8 @@ const AuthForm : React.FC<AuthFormProps> = ({isLogin, setIsLogin, login}) => {
                 });
             }else {
                 // Register logic
-                const response = await axios.post(`${API_URL}/users/register`, formDataRegister);
+                const response = await axios.post(`${API_URL}/api/v1/users/register`, formDataRegister);
+                console.log(response.data);
                 token = response.data.token;
                 setIsLoading(false);
                 setFromDataRegister({
