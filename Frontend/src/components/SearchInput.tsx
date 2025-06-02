@@ -1,7 +1,7 @@
 import { type Props } from "../pages/SearchPage";
 
 const SearchInput = (props: Props) => {
-  const { keywordProp, setIsLoading, setKeyword, setResourceMatches } = props
+  const { keywordProp, setIsLoading, setKeyword, setResourceMatches, submitStatus, /*setIsSubmitted*/ } = props
   // console.log(keywordProp)
   function handleSearchSubmit(e: any) {
     e.preventDefault()
@@ -57,8 +57,7 @@ const SearchInput = (props: Props) => {
           <option value="ai">AI</option>
         </select>
 
-        <button className="bg-orange-400 font-bold w-32 mx-auto rounded-md mb-4 p-3 ">Search</button>
-
+        <button  className={`${keywordProp?.length === 0 ?`bg-orange-200`: `bg-orange-400`} font-bold w-32 mx-auto rounded-md mb-4 p-3 $ $`} disabled={submitStatus? false : true}>Search</button>
       </div>
     </form>
   )

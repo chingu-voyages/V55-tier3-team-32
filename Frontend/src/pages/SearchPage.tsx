@@ -1,9 +1,8 @@
-import React from "react";
 import { useState } from "react";
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer";
 import SearchInput from "../components/SearchInput";
-import SearchResults from "../components/SearchResults"
+/*import SearchResults from "../components/SearchResults"*/
 
 export type Props = {
   keywordProp?: string
@@ -12,6 +11,8 @@ export type Props = {
   setKeyword?: any
   setResourceMatches?: any
   setIsLoading?: any
+  submitStatus?: boolean
+  setIsSubmitted?: any
 }
 
 
@@ -21,7 +22,7 @@ const SearchPage = () => {
   const [keyword, setKeyword] = useState<string>("");
   const [resourceMatches, setResourceMatches] = useState<[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
-
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
 
 
   return (
@@ -32,16 +33,17 @@ const SearchPage = () => {
       keywordProp={keyword} 
       resourcesProp={resourceMatches} 
       loadingOn={isLoading}
-      
       setKeyword={setKeyword} 
       setIsLoading={setIsLoading} 
       setResourceMatches={setResourceMatches}
+      submitStatus={isSubmitted}
+      setIsSubmitted={setIsSubmitted}
       />
 
-      <SearchResults 
+      {/* <SearchResults 
       resourcesProp={resourceMatches}
       loadingOn={isLoading}
-      />
+      /> */}
       <Footer />
     </div>
   )
