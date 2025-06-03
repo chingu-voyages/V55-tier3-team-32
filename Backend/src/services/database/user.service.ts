@@ -1,6 +1,6 @@
 import { BadRequestError } from '../../errors/error-handlers';
 import { IUserInterface } from '../../interfaces/user.interface';
-import { UserModel } from '../../models/user/UserModel';
+import { UserModel } from '../../models/UserModel';
 
 export const createUser = async (userData: IUserInterface) => {
   try {

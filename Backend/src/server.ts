@@ -12,6 +12,7 @@ import { StatusCodes } from 'http-status-codes';
 import { config } from './config';
 import { CustomError, IErrorResponse } from './errors/error-handlers';
 import { userRoutes } from './routes/user.routes';
+import { databaseConnection } from './database';
 
   const start = (app: Application) => {
     securityMiddleware(app);
@@ -75,6 +76,7 @@ import { userRoutes } from './routes/user.routes';
       const httpServer: http.Server = new http.Server(app);
       httpServer.listen(config.SERVER_PORT, () => {
         console.log(`server running on port ${config.SERVER_PORT}`);
+        databaseConnection();
       });
     } catch (error) {
       console.log('error', error);

@@ -1,8 +1,8 @@
 import { compare, hash } from 'bcryptjs';
 import { DataTypes, Model, ModelDefined, Optional } from 'sequelize';
 
-import { IUserInterface } from '../../interfaces/user.interface';
-import { sequelize } from '../../database';
+import { IUserInterface } from '../interfaces/user.interface';
+import { sequelize } from '../database';
 
 
 const SALT_ROUND = 10;
