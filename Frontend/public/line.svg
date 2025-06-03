@@ -1,0 +1,11 @@
+<svg viewBox="0 0 10 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" width="2" height="60" rx="1" fill="orange" />
+  <filter id="glow" x="-10" y="0" width="30" height="60">
+    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+    <feMerge>
+      <feMergeNode in="coloredBlur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  <rect x="4" width="2" height="60" rx="1" fill="orange" filter="url(#glow)" />
+</svg>
