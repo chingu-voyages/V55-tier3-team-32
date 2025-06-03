@@ -74,7 +74,7 @@ import {sequelize, databaseConnection } from './database';
   const startServer = async(app: Application): Promise<void> => {
     try {
       await databaseConnection()
-      await sequelize.sync();
+      await sequelize.sync({ force: true });
       const httpServer: http.Server = new http.Server(app);
       httpServer.listen(config.SERVER_PORT, () => {
         console.log(`server running on port ${config.SERVER_PORT}`);

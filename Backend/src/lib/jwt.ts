@@ -7,7 +7,8 @@ export function signToken(payload: IUserInterface) {
   return sign(
     {
       id: payload.id,
-      email: payload.email
+      email: payload.email,
+      username: payload.username,
     },
     config.JWT_SECRET_KEY!
   ) as unknown as IUserInterface;
