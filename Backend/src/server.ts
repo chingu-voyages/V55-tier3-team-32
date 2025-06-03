@@ -12,7 +12,9 @@ import { StatusCodes } from 'http-status-codes';
 import { config } from './config';
 import { CustomError, IErrorResponse } from './errors/error-handlers';
 import { userRoutes } from './routes/user.routes';
-import { databaseConnection } from './database';
+import { databaseConnection, sequelize } from './database';
+import { historyRoutes } from './routes/history.routes';
+import { authenticateUser } from './middlewares/authenticateUser';
 
   const start = (app: Application) => {
     securityMiddleware(app);
@@ -53,6 +55,7 @@ import { databaseConnection } from './database';
   const routesMiddleware = (app: Application) => {
     const BASE_PATH = '/api/v1';
     app.use(`${BASE_PATH}/users`, userRoutes);
+    app.use(`${BASE_PATH}/histories`, authenticateUser, historyRoutes);
   };
 
   const errorHandler = (app: Application) => {
@@ -77,6 +80,7 @@ import { databaseConnection } from './database';
       httpServer.listen(config.SERVER_PORT, () => {
         console.log(`server running on port ${config.SERVER_PORT}`);
         databaseConnection();
+        sequelize.sync();
       });
     } catch (error) {
       console.log('error', error);

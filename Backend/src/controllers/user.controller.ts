@@ -22,6 +22,7 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
       password: ''
     });
   }
+  req.currentUser = user;
 
   res.status(StatusCodes.CREATED).json({status: 'success', message: 'user created successfully', user, token});
 };
