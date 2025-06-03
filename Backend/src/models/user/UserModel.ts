@@ -32,9 +32,9 @@ const UserModel: ModelDefined<IUserInterface, UserCreationAttributes> & UserMode
     type: DataTypes.STRING,
     allowNull: false
   },
-  country: {
-    type: DataTypes.STRING,
-  },
+  // country: {
+  //   type: DataTypes.STRING,
+  // },
 }, {
   timestamps: true,
   indexes: [
@@ -48,6 +48,7 @@ const UserModel: ModelDefined<IUserInterface, UserCreationAttributes> & UserMode
 UserModel.addHook('beforeCreate', async (auth: Model) => {
   const hashedPassword: string = await hash(auth.dataValues.password as string, SALT_ROUND);
   auth.dataValues.password = hashedPassword;
+  console.log('UserModel beforeCreate hook:', auth.dataValues);
 });
 
 UserModel.prototype.comparePassword = async function (password: string, hashedPassword: string): Promise<boolean> {
@@ -56,6 +57,7 @@ UserModel.prototype.comparePassword = async function (password: string, hashedPa
 
 UserModel.prototype.hashPassword = async function (password: string): Promise<string> {
   return hash(password, SALT_ROUND);
+  console.log('UserModel hashPassword method:', password);
 };
 
 

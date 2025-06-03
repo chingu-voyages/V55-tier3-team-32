@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import e, { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { validationResult } from 'express-validator';
 
@@ -8,14 +8,22 @@ import { signToken } from '../lib/jwt';
 import { IUserInterface } from '../interfaces/user.interface';
 
 export const registerUser = async (req: Request, res: Response): Promise<void> => {
-  const errors = validationResult(req);
-
-   if (!errors.isEmpty()) {
-    throw new BadRequestError(errors.array()[0].msg, 'registerUser() controller');
+  const errors = validationResult(req).array();
+  // console.log('Validation result:', errors);
+console.log('Request body:', req.body);
+ if(errors.length > 0) {
+    console.log('Validation errors:', errors);
+    throw new BadRequestError(errors[0].msg, 'registerUser() controller');
   }
+ 
+  //  if (!errors.isEmpty()) {
+  //   throw new BadRequestError(errors.array()[0].msg, 'registerUser() controller');
+  // }
+  console.log('User created:', req.body);
   let token;
   const user = await createUser(req.body) as unknown as IUserInterface;
-
+  
+   console.log('User created:', user);
   if (user) {
     token = signToken({
       email: user.email, id: user.id,
