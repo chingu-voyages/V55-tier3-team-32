@@ -18,8 +18,8 @@ export async function databaseConnection(): Promise<void> {
   try {
     await sequelize.authenticate();
     console.log('Postgres database connection has been established successfully.');
-  } catch (error) {
-    throw new BadRequestError('Database connection error', `${error}`);
+  } catch (_error) {
+    throw new BadRequestError('Database connection error', 'DatabaseConnection() method');
   }
 }
 

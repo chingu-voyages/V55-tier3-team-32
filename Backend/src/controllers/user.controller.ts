@@ -32,6 +32,7 @@ console.log('Request body:', req.body);
       password: ''
     });
   }
+  req.currentUser = user;
 
   res.status(StatusCodes.CREATED).json({status: 'success', message: 'user created successfully', user, token});
 };
