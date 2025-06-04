@@ -3,6 +3,7 @@ import {useNavigate, useLocation} from 'react-router-dom';
 import axios , { AxiosError } from 'axios';
 import { API_URL } from '../const';
 import { z } from "zod";
+import { useAuth } from "../hooks/AuthContext";
 
 export const loginSchema = z.object({
   email: z.string()
@@ -28,7 +29,7 @@ export const registerSchema = z.object({
 interface AuthFormProps {
     isLogin: boolean;
     setIsLogin : React.Dispatch<React.SetStateAction<boolean>>;
-    login: (token: string) => void;
+    // login: (token: string) => void;
 }
 
 interface AuthResponse {
@@ -45,12 +46,13 @@ interface AuthResponse {
   message?: string;
 }
 
-const AuthForm : React.FC<AuthFormProps> = ({isLogin, setIsLogin, login}) => {
+const AuthForm : React.FC<AuthFormProps> = ({isLogin, setIsLogin}) => {
     const [errorMessage, setErrorMessage] = useState("");
     const [registrationComplete, setRegistrationComplete] = useState(false)
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
+    const { login } = useAuth();
 
 
     const [formDataRegister, setFromDataRegister]= useState({
@@ -132,15 +134,7 @@ const AuthForm : React.FC<AuthFormProps> = ({isLogin, setIsLogin, login}) => {
             }
             login(token);
             setErrorMessage("");
-            // Redirect to the previous page or home page
-            // Use location.state to get the previous path if available
-            // If not available, default to home page
-            // Navigate to the previous page or home page
-            // location.state?.from is used to get the previous path if available
-            // If not available, default to home page
-            // Replace the current entry in the history stack
-            // This prevents the user from going back to the login/register page
-            // after successful login/register
+           console.log("Login successful, token:", token);
             const from = location.state?.from?.pathname || "/";
             navigate(from, { replace: true });
         } catch (err : unknown) {

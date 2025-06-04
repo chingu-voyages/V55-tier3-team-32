@@ -1,11 +1,11 @@
 import { useState } from "react";
 import NavbarSign from "../components/NavbarSign";
-import { useAuth } from "../hooks/useAuth";
+
 import AuthForm from "../components/AuthForm";
 
 
 export default function LoginPage() {
-  const { login } = useAuth();
+  
   const [isLogin, setIsLogin] = useState(true);
 
 
@@ -18,7 +18,7 @@ export default function LoginPage() {
       <NavbarSign />
       <div className="flex flex-col mt-40 justify-center items-center">
         
-      <AuthForm isLogin={isLogin} setIsLogin={setIsLogin} login={login}/>
+      <AuthForm isLogin={isLogin} setIsLogin={setIsLogin}/>
     
       <p className="mt-4 text-sm  text-white">
                 {isLogin
