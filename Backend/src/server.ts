@@ -15,6 +15,7 @@ import { userRoutes } from './routes/user.routes';
 import { databaseConnection, sequelize } from './database';
 import { historyRoutes } from './routes/history.routes';
 import { authenticateUser } from './middlewares/authenticateUser';
+import { chatRoutes } from './routes/chat.routes';
 
   const start = (app: Application) => {
     securityMiddleware(app);
@@ -56,6 +57,7 @@ import { authenticateUser } from './middlewares/authenticateUser';
     const BASE_PATH = '/api/v1';
     app.use(`${BASE_PATH}/users`, userRoutes);
     app.use(`${BASE_PATH}/histories`, authenticateUser, historyRoutes);
+    app.use(`${BASE_PATH}/chats`, authenticateUser, chatRoutes);
   };
 
   const errorHandler = (app: Application) => {

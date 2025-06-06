@@ -12,11 +12,11 @@ class GeminiService {
   }
 
   async chatResponse(
-    hostory: { role: string; content: string }[],
+    history: { role: string; content: string }[],
     message: string
   ): Promise<string> {
     // Map hostory to the expected format for history
-    const formattedHistory = hostory.map(h => ({
+    const formattedHistory = history.map(h => ({
       role: h.role,
       parts: [{ text: h.content }]
     }));
