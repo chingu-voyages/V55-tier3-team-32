@@ -105,7 +105,7 @@ const Sidebar : React.FC <SidebarProps> = (
             </div>
             <div className="mt-2 text-center">
                 <div
-                    onClick={logout}
+                    onClick={handleLogout}
                     className="text-sm text-[#5C2E0C] font-semibold cursor-pointer"
                 >
                     Logout
