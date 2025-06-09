@@ -22,6 +22,9 @@ export default {
         'glow-border': 'glow-border 1.5s infinite',
         'spin-slow': 'spin 10s linear infinite',
       },
+      height: {
+        '80vh': '80vh',
+      },
   } },
   plugins: [
     require('tailwind-scrollbar-hide'),
