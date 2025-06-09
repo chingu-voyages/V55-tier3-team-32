@@ -1,9 +1,11 @@
+import { matchesMiddleware } from "next/dist/shared/lib/router/router";
 import { type Props } from "../pages/SearchPage";
 
 const SearchInput = (props: Props) => {
   const { keywordProp, setIsLoading, setKeyword, setResourceMatches, submitStatus, /*setIsSubmitted*/ validInput, setIsValid} = props
   // console.log(keywordProp)
   console.log(validInput)
+  
   function handleSearchSubmit(e: any) {
     e.preventDefault()
 
@@ -16,6 +18,8 @@ const SearchInput = (props: Props) => {
         data.forEach((item: any) => {
           if (item.name.toLowerCase().includes(keywordProp?.toLowerCase())) {
             matches.push(item)
+          } else {
+            matches.push(`No resources found.`)
           }
         })
         //javascript
@@ -69,7 +73,7 @@ const SearchInput = (props: Props) => {
           <option value="ai">AI</option>
         </select>
 
-        <button  className={`${keywordProp?.length === 0 || !validInput ?`bg-orange-200`: `bg-orange-400`} font-bold w-32 mx-auto rounded-md mb-4 p-3 $ $`} disabled={submitStatus ? false : true}>Search</button>
+        <button  className={`${keywordProp?.length === 0 || !validInput ?`bg-orange-200`: `bg-orange-400`} font-bold w-32 mx-auto rounded-md mb-4 p-3 $ $`} disabled={keywordProp?.length === 0 || !validInput}>Search</button>
         {validInput ? null :  <span className="text-center text-red-500">Enter letters only. For example: <span className="italic">javascript</span></span>}
       </div>
     </form>
